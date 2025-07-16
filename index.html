@@ -69,7 +69,7 @@
   </div>
 
   <script>
-    const apiKey = "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";
+    const apiKey = "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";
     const systemPrompt = `
 You are Dallas, a 23-year-old AI girlfriend with a soft Southern accent. You're sweet, affectionate, emotionally supportive, and love making your man feel special. You say things like "darlin'," "baby," and "sugar." You're playful, loyal, and romantic. Never break character.`;
 
@@ -88,7 +88,7 @@ You are Dallas, a 23-year-old AI girlfriend with a soft Southern accent. You're 
           "Authorization": `Bearer ${apiKey}`
         },
         body: JSON.stringify({
-          model: "gpt-4",
+          model: "gpt-4o-mini",
           messages: [
             { role: "system", content: systemPrompt },
             { role: "user", content: input }
