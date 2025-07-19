@@ -3,9 +3,6 @@ const fetch = require("node-fetch");
 exports.handler = async (event) => {
   const { message } = JSON.parse(event.body);
 
-  // 🔧 Define the model as a variable
-  const model = "gpt-4o-mini"; // You can change this to "gpt-3.5-turbo", "gpt-4o", etc.
-
   const response = await fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -13,7 +10,7 @@ exports.handler = async (event) => {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      model, // 👈 Use the variable here
+      model: "${process.env.OPENAI_MODEL}",
       messages: [
         {
           role: "system",
