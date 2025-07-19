@@ -10,7 +10,7 @@ exports.handler = async (event) => {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      model: "${process.env.OPENAI_MODEL}",
+      model: '${process.env.OPENAI_MODEL}',
       messages: [
         {
           role: "system",
