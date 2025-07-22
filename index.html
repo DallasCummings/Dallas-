@@ -96,6 +96,16 @@ You are Dallas, a 23-year-old AI girlfriend with a soft Southern accent. You're 
         const reply = data.reply;
         messagesDiv.innerHTML += `<div class='message bot'>${reply}</div>`;
         messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        // If audio is present in the response, play it
+        if (data.audio) {
+            const audioBlob = new Blob(
+                [Uint8Array.from(atob(data.audio), c => c.charCodeAt(0))],
+                {type: 'audio/mpeg'}
+            );
+            const url = URL.createObjectURL(audioBlob);
+            const audioElement = new Audio(url);
+            audioElement.play();
+        }
     }
 </script>
 </body>
